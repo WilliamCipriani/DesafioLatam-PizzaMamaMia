@@ -2,13 +2,13 @@ import React from 'react';
 
 const CardPizza = ({ name, price, ingredients, img }) => {
   return (
-    <div class="card-group">
-      <div class="card" style={{ maxWidth: '350px', margin: '10px' }}>
-        <img class="card-img-top" src={img} alt={name} />
-        <div class="card-body">
-          <h5 class="card-title">{name}</h5>
+    <div className="col-md-4 d-flex align-items-stretch mb-4 mt-4">
+      <div className="card" style={{ maxWidth: '400px', margin: 'auto' }}>
+        <img className="card-img-top" src={img} alt={name} />
+        <div className="card-body">
+          <h5 className="card-title">{name}</h5>
           <div className='m-2'>
-            <p class="card-text text-center">Ingredientes:</p>
+            <p className="card-text text-center">Ingredientes:</p>
             <p className="card-text text-center">🍕
                 {ingredients.map((ingredient, index) => (
                   <span key={index} style={{ display: 'inline-block', marginRight: '5px' }}>
