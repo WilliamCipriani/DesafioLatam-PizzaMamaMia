@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import CartContext from '../context/CartContext';
 
 const Navbar = () => {
-  const total = 25000;
+  const { totalAmount } = useContext(CartContext);  // Accede al total desde el contexto
   const token = false; // Cambia a true para simular que el usuario ha iniciado sesión
 
   return (
@@ -36,7 +37,7 @@ const Navbar = () => {
         <span className="navbar-text p-2">
           <Link to="/cart">
             <button className="btn btn-outline-info">
-              🛒 Total: ${total.toLocaleString()}
+              🛒 Total: ${totalAmount.toLocaleString()} {/* Usa el total dinámico */}
             </button>
           </Link>
         </span>
